@@ -59,3 +59,13 @@ func sqrt(n int) int {
 
 	return sqrtHelper(n, 1, n)
 }
+
+func sqrtBigNumber(n int) int {
+	for guess := 1; guess*guess <= n; guess++ {
+		if guess*guess == n {
+
+			return guess
+		}
+	}
+	return -1
+}

@@ -112,3 +112,25 @@ func TestSqrtGuess(t *testing.T) {
 	}
 	
 }
+
+func TestSqrtBigNumberGuess(t *testing.T) {
+	var tests = []struct {
+		a int
+		want int
+	} {
+		{25, 5},
+		{10, -1},
+		{2500, 50},
+	}
+
+	for _, tt := range tests {
+		testname := fmt.Sprintf("sqrt %d", tt.a)
+		t.Run(testname, func(t *testing.T){
+			ans := sqrtBigNumber(tt.a)
+			if ans != tt.want {
+				t.Errorf("got %d, want %d", ans, tt.want)
+			}
+		})
+	}
+	
+}
