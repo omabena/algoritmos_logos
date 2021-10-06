@@ -69,3 +69,23 @@ func sqrtBigNumber(n int) int {
 	}
 	return -1
 }
+
+func copyArray(array []int) []int {
+	var copy []int
+	for _, val := range array {
+		copy = appendToNew(copy, val)
+		fmt.Print("-")
+	}
+	return copy
+}
+
+func appendToNew(array []int, value int) []int {
+	bigger := make([]int, len(array)+1)
+	for i, val := range array {
+		bigger[i] = val
+		fmt.Print("*")
+	}
+
+	bigger[len(bigger)-1] = value
+	return bigger
+}
